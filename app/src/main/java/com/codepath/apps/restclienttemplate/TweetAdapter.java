@@ -52,7 +52,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
         //populate views
         holder.tvUsername.setText(tweet.user.name);
         holder.tvBody.setText(tweet.body);
-        holder.tvRelativeTime.setText(relativeDate(tweet.getCreatedAt()));
+        holder.tvRelativeTime.setText(tweet.getTimeAgo());
 
         Glide.with(context).load(tweet.user.profileImageUrl).into(holder.ivProfileImage);
     }

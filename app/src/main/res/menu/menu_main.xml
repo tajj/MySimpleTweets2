@@ -1,0 +1,19 @@
+<!-- Menu file for `activity_movies.xml` is located in a file
+     such as `res/menu/menu_movies.xml` , could add android:icon="@drawable/ic_compose"
+      to first item and android:icon="@drawable/ic_profile" to second
+      might want to switch show as action to 'always' 7y87777676yy7y
+      -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/miCompose"
+        app:showAsAction="ifRoom"
+        android:title="@string/tweet_label"
+        >
+    </item>
+    <item
+        android:id="@+id/miProfile"
+        app:showAsAction="ifRoom|withText"
+        android:title="Profile">
+    </item>
+</menu>

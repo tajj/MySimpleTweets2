@@ -8,6 +8,8 @@ import com.github.scribejava.core.builder.api.BaseApi;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+
+
 /*
  * 
  * This is the object responsible for communicating with a REST API. 
@@ -21,6 +23,8 @@ import com.loopj.android.http.RequestParams;
  * 
  */
 public class TwitterClient extends OAuthBaseClient {
+//	private static Context context;
+
 	public static final BaseApi REST_API_INSTANCE = TwitterApi.instance(); // Change this
 	public static final String REST_URL = "https://api.twitter.com/1.1"; // Change this, base API URL
 	public static final String REST_CONSUMER_KEY = "1dObBmiqXwuPsY5PlNryKISYz";       // Change this
@@ -58,5 +62,33 @@ public class TwitterClient extends OAuthBaseClient {
 	 * 3. Define the request method and make a call to the client
 	 *    i.e client.get(apiUrl, params, handler);
 	 *    i.e client.post(apiUrl, params, handler);
+	 *
+	 *
 	 */
+
+//	@Override
+//	public void onCreate() {
+//		super.onCreate();
+//		TwitterClient.context = this;
+//
+//		// Create global configuration and initialize ImageLoader with this configuration
+//		DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder().
+//				cacheInMemory().cacheOnDisc().build();
+//		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext())
+//				.defaultDisplayImageOptions(defaultOptions)
+//				.build();
+//		ImageLoader.getInstance().init(config);
+//	}
+
+	public void sendTweet(String message, AsyncHttpResponseHandler handler) {
+		String apiUrl = getApiUrl("statuses/update.json");
+		// Can specify query string params directly or through RequestParams.
+		RequestParams params = new RequestParams();
+		params.put("status", message);
+		client.post(apiUrl, params, handler);
+	}
+
+//	public static TwitterClient getRestClient() {
+//		return (TwitterClient) TwitterClient.getInstance(TwitterClient.class, TwitterClient.context);
+//	}
 }
