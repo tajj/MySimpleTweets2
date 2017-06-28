@@ -30,6 +30,7 @@ public class TimelineActivity extends AppCompatActivity {
     TweetAdapter tweetAdapter;
     ArrayList<Tweet> tweets;
     RecyclerView rvTweets;
+//    Button btnSend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,14 @@ public class TimelineActivity extends AppCompatActivity {
         rvTweets.setAdapter(tweetAdapter);
 
         populateTimeline();
+
+        //attempting to add onclick
+//        btnSend = (Button) findViewById(R.id.btnSend);
+////        btnSend.setOnClickListener(new onClickListener(){
+//            public void sendTweet(View v){
+//                startActivity(new Intent(TimelineActivity.this, TimelineActivity.class));
+//            }
+//        });
     }
 
     @Override
@@ -129,11 +138,6 @@ public class TimelineActivity extends AppCompatActivity {
 //        return true; //super.onCreateOptionsMenu(menu);
 //    }
 
-//    public boolean composeTweet(MenuItem menu) {
-//        Intent i = new Intent(this, ComposeActivity.class);
-//        startActivityForResult(i, COMPOSE_CODE);
-//        return false;
-//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

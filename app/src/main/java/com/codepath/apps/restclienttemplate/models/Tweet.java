@@ -90,7 +90,7 @@ public class Tweet implements Parcelable {
     public void writeToParcel(Parcel out, int flags) {
         out.writeString(body);
         out.writeLong(uid);
-        out.writeParcelable((Parcelable) user, flags); //HELP? added (PArcelable)
+        out.writeParcelable( user, flags); //HELP? added (PArcelable)
         out.writeLong(createdAt.getTime());
     }
 
