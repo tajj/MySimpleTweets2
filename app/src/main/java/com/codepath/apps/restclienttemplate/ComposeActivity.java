@@ -37,7 +37,7 @@ public class ComposeActivity extends AppCompatActivity {
        btnSend = (Button) findViewById(R.id.btnSend);
 
         btnSend.setOnClickListener(new View.OnClickListener() {
-            // @Override
+             @Override
             public void onClick(View view) {
                     client.sendTweet(etTweet.getText().toString(), new JsonHttpResponseHandler() {
                         @Override
