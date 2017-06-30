@@ -9,7 +9,6 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 
-
 /*
  * 
  * This is the object responsible for communicating with a REST API. 
@@ -44,9 +43,10 @@ public class TwitterClient extends OAuthBaseClient {
 				String.format(REST_CALLBACK_URL_TEMPLATE, context.getString(R.string.intent_host),
 						context.getString(R.string.intent_scheme), context.getPackageName(), FALLBACK_URL));
 	}
+
 	// CHANGE THIS
 	// DEFINE METHODS for different API endpoints here
-	public void getHomeTimeline(AsyncHttpResponseHandler handler) {
+	public void getHomeTimeline(int i, AsyncHttpResponseHandler handler) {
 		String apiUrl = getApiUrl("statuses/home_timeline.json");
 		// Can specify query string params directly or through RequestParams.
 		RequestParams params = new RequestParams();
@@ -65,20 +65,17 @@ public class TwitterClient extends OAuthBaseClient {
 	 *
 	 *
 	 */
+	public void postUpdate(String tweetBody, AsyncHttpResponseHandler handler) {
+		String apiUrl = getApiUrl("statuses/update.json");
+		RequestParams params = new RequestParams();
+		params.put("status", tweetBody);
+		client.post(apiUrl, params, handler);
+	}
 
-//	@Override
-//	public void onCreate() {
-//		super.onCreate();
-//		TwitterClient.context = this;
-//
-//		// Create global configuration and initialize ImageLoader with this configuration
-//		DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder().
-//				cacheInMemory().cacheOnDisc().build();
-//		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext())
-//				.defaultDisplayImageOptions(defaultOptions)
-//				.build();
-//		ImageLoader.getInstance().init(config);
-//	}
+	    public void getProfile(AsyncHttpResponseHandler handler) {
+String apiUrl = getApiUrl("account/verify_credentials.json");
+        client.get(apiUrl, null, handler);
+}
 
 	public void sendTweet(String message, AsyncHttpResponseHandler handler) {
 		String apiUrl = getApiUrl("statuses/update.json");
@@ -88,7 +85,5 @@ public class TwitterClient extends OAuthBaseClient {
 		client.post(apiUrl, params, handler);
 	}
 
-//	public static TwitterClient getRestClient() {
-//		return (TwitterClient) TwitterClient.getInstance(TwitterClient.class, TwitterClient.context);
-//	}
+
 }

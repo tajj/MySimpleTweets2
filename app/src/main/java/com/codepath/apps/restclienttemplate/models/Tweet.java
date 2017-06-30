@@ -23,6 +23,7 @@ public class Tweet implements Parcelable {
     public Date createdAt;
 
 
+
     //deserializr
     private Tweet(Parcel in) {
         body = in.readString();

@@ -5,27 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.codepath.apps.restclienttemplate.ComposeActivity">
+
+
+
+
+
     <TextView
-        android:id="@+id/tvTweetLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/tweet_label" />
-
-    <EditText
-        android:id="@+id/etTweet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:text="@string/characters_left"
+        android:id="@+id/tvCharsLeft"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/tvTweetLabel"
-        android:ems="10"
-        android:maxLength="140"
-        android:inputType="textMultiLine" >
+        android:layout_alignParentEnd="true" />
 
-        <requestFocus />
-    </EditText>
+    <ImageView
+        android:id="@+id/ivProfileImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
+
+        app:srcCompat="@drawable/ic_launcher"
+         />
+    <TextView
+    android:id="@+id/tvUserName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="0dp"
+    android:layout_marginTop="16dp"
+    android:paddingLeft="8dp"
+    android:textColor="#909090"
+    android:layout_toRightOf="@+id/ivProfileImage"/>
+
+    <TextView
+        android:id="@+id/tvHandle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="8dp"
+        android:textColor="#909090"
+        android:layout_toRightOf="@+id/tvUserName"/>
+
+
 
     <Button
         android:id="@+id/btnSend"
@@ -35,6 +60,19 @@
         android:layout_alignParentLeft="true"
         android:onClick="sendTweet"
         android:text="@string/send_tweet" />
+
+    <EditText
+        android:id="@+id/etTweet"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Compose a tweet..."
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/ivProfileImage"
+        android:layout_alignParentStart="true">
+
+        <requestFocus />
+    </EditText>
 
 
 </RelativeLayout>

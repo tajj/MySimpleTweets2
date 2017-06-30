@@ -2,18 +2,25 @@
      such as `res/menu/menu_movies.xml` , could add android:icon="@drawable/ic_compose"
       to first item and android:icon="@drawable/ic_profile" to second
       might want to switch show as action to 'always' 7y87777676yy7y
+
+      <item
+        android:id="@+id/miActionProgress"
+        android:title="Loading..."
+        android:visible="false"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        app:actionLayout="@layout/action_view_progress" />
       -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
     <item
         android:id="@+id/miCompose"
         app:showAsAction="ifRoom"
-        android:title="@string/tweet_label"
+        android:icon="@drawable/vector_compose_fab"
         >
     </item>
-    <item
-        android:id="@+id/miProfile"
-        app:showAsAction="ifRoom|withText"
-        android:title="Profile">
-    </item>
+
+
 </menu>
