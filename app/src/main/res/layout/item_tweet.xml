@@ -39,16 +39,16 @@
         android:layout_alignParentRight="true" />
 
     <TextView
-    android:id="@+id/tvBody"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="5dp"
-    android:text="TextView"
-    android:layout_below="@+id/tvUserName"
-    android:layout_toEndOf="@+id/ivProfileImage"
-    android:layout_alignBottom="@+id/ivProfileImage"
-    android:autoLink="all"
-    android:linksClickable="true"
-    />
+        android:id="@+id/tvBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="TextView"
+        android:layout_below="@+id/tvUserName"
+        android:layout_toEndOf="@+id/ivProfileImage"
+        android:layout_alignBottom="@+id/ivProfileImage"
+        android:autoLink="all"
+        android:linksClickable="true"
+        />
 
 </RelativeLayout>

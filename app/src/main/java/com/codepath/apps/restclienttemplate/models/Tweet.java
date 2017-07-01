@@ -35,6 +35,7 @@ public class Tweet implements Parcelable {
     public Tweet() {
 
     }
+    //getIntent().getParcelableExtra
 
     public static Tweet fromJSON(JSONObject jsonObject) throws JSONException {
         Tweet tweet = new Tweet();
